@@ -4,7 +4,7 @@ import { ContactPageThirdBlock } from '../components/contacts/ContactPageThirdBl
 export default function Contacts() {
   return (
     <>
-      <Header/>
+      <Header isBlog={false}/>
       <ContactPageFirstBlock/>
       <ContactPageSecondBlock/>
       <ContactPageThirdBlock/>

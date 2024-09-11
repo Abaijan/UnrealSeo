@@ -1,8 +1,9 @@
 import React from 'react'
 
 export const Card = () => {
+
   return (
-   <div>
+   <div >
         <img src="/img/card.png" alt="" />
         <div className='font-raleway font-medium text-[16px] flex flex-col text-start mt-[10px]'>
             <span>Poloboy</span>

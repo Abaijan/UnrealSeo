@@ -22,6 +22,7 @@ export { AboutUsSecondBlock } from './aboutUs/AboutUsSecondBlock';
 export { AboutUsThreeBlock } from './aboutUs/AboutUsThreeBlock';
 export { AboutUsFourBlock } from './aboutUs/AboutUsFourBlock';
 export { AboutUsSevenBlock } from './aboutUs/AboutUsSevenBlock';
+export {AboutUsAfterSixBlock} from './aboutUs/AboutAfterSixBlock'
 
 ///service
 export { ServicePageFirstBlock } from './ServicePage/ServicePageFirstBlock';
@@ -43,3 +44,12 @@ export { ContactPageThirdBlock } from './contacts/ContactPageThirdBlock';
 ///porfolioPage
 export {PortfolioPageFirstBlock} from './portfolio/PortfolioPageFirstBlock';
 export {PortfolioPageThirdBlock} from './portfolio/PortfolioPageThirdBlock';
+
+//Blog
+export {BloglPageFirstBlock} from './blogPage/BlogPageFirstBlock';
+
+//Projects
+export {DetailsBanner} from './ProjectsDetail/DetailsBanner'
+export {DetailsDescription} from './ProjectsDetail/DetailBackground';
+export {DetailsVideoComponent} from './ProjectsDetail/DetailsVideoComponent'
+export {InfoBlockDetail} from './ProjectsDetail/InfoBlockDetail'

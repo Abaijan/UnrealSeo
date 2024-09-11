@@ -4,7 +4,7 @@ import { Header,Footer,PortfolioPageFirstBlock,MainPageSixBlock,PortfolioPageThi
 export default function Portfolio() {
   return (
     <>
-      <Header/>
+      <Header  isBlog={false}/>
       <PortfolioPageFirstBlock/>
       <MainPageSixBlock/>
       <PortfolioPageThirdBlock/> 

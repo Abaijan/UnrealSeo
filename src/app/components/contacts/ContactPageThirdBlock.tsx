@@ -33,15 +33,15 @@ export const ContactPageThirdBlock =() => {
 
   ];
   return (
-    <section className=' container font-raleway'>
-      <div className=" text-white flex flex-row justify-between">
-      <h2 className="text-[54px] font-bold ">Curious to know<br/> more?</h2>
-      <div className='w-[630px]'>
+    <section className=' container font-raleway my-[40px]'>
+      <div className=" text-white flex flex-col lg:flex-row justify-between pl-[10px]">
+      <h2 className="text-[54px] font-bold ">Curious to know more?</h2>
+      <div className='lg:w-[630px]'>
          {data.map((item, index) => (
         <div key={index} className="border-b m-[20px]">
           <button
             onClick={() => toggleSection(index)}
-            className="flex justify-between w-full py-4 text-left text-[24px]  font-semibold focus:outline-none"
+            className="flex justify-between w-full py-4 text-left text-[18px] md:text-[24px]   focus:outline-none"
           >
             {item.question}
             <span

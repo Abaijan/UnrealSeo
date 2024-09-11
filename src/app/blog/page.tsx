@@ -1,12 +1,30 @@
-import React from 'react'
-import { Header,Footer } from '../components'
+'use client'
+import React , { useEffect, useState }from 'react'
+
+import { Header,Footer  } from '../components'
+import BloglPageFirstBlock from '../components/blogPage/BlogPageFirstBlock'
+import axios from 'axios'
 
 
 export default function Blog() {
+    const [isBlog, setBlog] = useState(false)
+        useEffect(() => {
+            const path = window.location.pathname;
+            const isBlog = path.includes('blog');
+            setBlog(isBlog);
+            console.log(isBlog)
+        },[isBlog]);
+
   return (
     <div>
-            <Header/>
-      <Footer/>
+        <section className="bg-[#ffffff] text-[black]">
+            <Header isBlog={true}/>
+            <BloglPageFirstBlock/>
+            <Footer/>
+        </section>
+
+
+
     </div>
   )
 }
