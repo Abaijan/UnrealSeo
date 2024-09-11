@@ -1,6 +1,6 @@
 'use client'
 import React, { useEffect, useState } from "react";
-import axios from "axios";
+import axiosInstance from '../../utils/api';
 
 // Define a type for the item
 interface Item {
@@ -14,7 +14,7 @@ export const MainPageThirdBlock = () => {
 
     const fetchData = async () => {
         try {
-            const res = await axios.get("http://178.253.42.15/api/whatwedooffer");
+            const res = await axiosInstance.get("/whatwedooffer");
             return res.data.results;
         } catch (error) {
             console.error("Error fetching data:", error);

@@ -1,7 +1,7 @@
 'use client';
 import React, { useEffect, useState } from 'react';
 import dynamic from 'next/dynamic';
-import axios from 'axios';
+import axiosInstance from '../utils/api';
 import Loading from '../../../src/app/loading';
 
 
@@ -12,7 +12,7 @@ export default function AboutUs() {
 
     const fetchData = async () => {
         try {
-            const res = await axios.get("http://178.253.42.15/api/aboutus/");
+            const res = await axiosInstance.get("/aboutus/");
             return res.data;
         } catch (error) {
             console.error(error);

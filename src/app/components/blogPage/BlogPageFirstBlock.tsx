@@ -1,7 +1,7 @@
 'use client'
 
 import React, { useEffect, useState } from 'react';
-import axios from "axios";
+import axiosInstance from '../../utils/api';
 
 // Интерфейс для одного элемента блога
 interface BlogItem {
@@ -24,7 +24,7 @@ interface BlogPageFirstBlockProps {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const res = await axios.get('http://178.253.42.15/api/blog');
+                const res = await axiosInstance.get('/blog/');
                 const data = res.data.results;
                 setData(data);
             } catch (err) {

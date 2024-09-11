@@ -1,6 +1,6 @@
 'use client';
 import React, { useEffect, useState } from 'react';
-import axios from 'axios';
+import axiosInstance from '../../utils/api';
 import Link from 'next/link';
 
 // Типизация данных
@@ -16,7 +16,7 @@ export const MainPageEightBlock = () => {
 
     const fetchData = async () => {
         try {
-            const res = await axios.get('http://178.253.42.15/api/projectcost/1/');
+            const res = await axiosInstance.get('/projectcost/1/');
             setData(res.data);
         } catch (error) {
             console.error('Error fetching project cost data:', error);

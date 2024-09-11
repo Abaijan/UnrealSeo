@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { Card } from '../../ui';
-import axios from 'axios';
+import axiosInstance from '../../utils/api';
 
 export const MainPageSixBlock = () => {
   const [data, setData] = useState<any[]>([]); // Replace `any` with a more specific type if possible
@@ -10,7 +10,7 @@ export const MainPageSixBlock = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const res = await axios.get('http://178.253.42.15/api/ourprojects');
+        const res = await axiosInstance.get('/ourprojects');
         setData(res.data.results); // No need for Promise.all here
       } catch (err) {
         console.log(err);

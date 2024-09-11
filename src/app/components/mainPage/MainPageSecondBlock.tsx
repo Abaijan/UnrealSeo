@@ -1,6 +1,6 @@
 'use client';
 import React, { useEffect, useState } from 'react';
-import axios from 'axios';
+import axiosInstance from '../../utils/api';
 import Link from 'next/link';
 import Loading from '../../loading';
 
@@ -24,8 +24,8 @@ export const MainPageSecondBlock = () => {
     const fetchData = async () => {
       try {
         const [statRes, aboutRes] = await Promise.all([
-          axios.get('http://178.253.42.15/api/statistic/'),
-          axios.get('http://178.253.42.15/api/aboutus/')
+          axiosInstance.get('/statistic/'),
+          axiosInstance.get('/aboutus/')
         ]);
 
         setStatisticData(statRes.data.results[0]);

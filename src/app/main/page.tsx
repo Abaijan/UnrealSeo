@@ -2,7 +2,7 @@
 import { Header, Footer, MainPageFirstBlock, MainPageFiveBlock, MainPageFourBlock, MainPageSecondBlock, MainPageThirdBlock, MainPageSixBlock, MainPageSevenBlock, MainPageEightBlock, MainPageTenBlock } from "../components";
 import { useEffect, useState } from "react";
 import Loading from "../../../src/app/loading";
-import axios from "axios";
+import axiosInstance from '../utils/api';
 
 // Определяем тип для состояния данных
 interface MainPageData {
@@ -16,7 +16,7 @@ export default function Main() {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const res = await axios.get("http://178.253.42.15/api/mainpage/1/");
+                const res = await axiosInstance.get("/mainpage/1/");
                 setData(res.data);
             } catch (error) {
                 console.error(error);

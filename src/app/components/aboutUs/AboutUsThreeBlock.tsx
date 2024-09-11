@@ -1,13 +1,13 @@
 'use client'
 import React, { useEffect, useState } from "react";
-import axios from "axios";
+import axiosInstance from '../../utils/api';
 
 export const AboutUsThreeBlock = () => {
   const [data, setData] = useState<any>(null); // тип данных можно уточнить, если известен
 
   const fetchData = async () => {
     try {
-      const res = await axios.get("http://178.253.42.15/api/statistic/");
+      const res = await axiosInstance.get("/statistic/");
       return res.data?.results || null; // возвращаем null, если нет данных
     } catch (error) {
       console.error(error);

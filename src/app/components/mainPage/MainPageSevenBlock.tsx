@@ -2,14 +2,14 @@
 
 import React, { useEffect, useState } from 'react';
 import { PartnerCard } from '../../ui';
-import axios from 'axios';
+import axiosInstance from '../../utils/api';
 
 export const MainPageSevenBlock = () => {
     const [data, setData] = useState<any[]>([]); // Replace `any` with a more specific type if possible
 
     const fetchData = async () => {
         try {
-            const res = await axios.get('http://178.253.42.15/api/partners/');
+            const res = await axiosInstance.get('/partners/');
             return res.data.results;
         } catch (error) {
             console.error(error);

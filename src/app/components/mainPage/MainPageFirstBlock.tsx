@@ -1,6 +1,6 @@
 'use client';
 import React, { useEffect, useState } from 'react';
-import axios from 'axios';
+ import axiosInstance from '../../utils/api';
 import Link from 'next/link';
 import Loading from '../../loading';
 
@@ -17,7 +17,7 @@ export const MainPageFirstBlock = () => {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const res = await axios.get('http://178.253.42.15/api/mainpage/1/');
+                const res = await axiosInstance.get('/mainpage/1/');
                 setData(res.data);
             } catch (error) {
                 console.error('Error fetching data:', error);

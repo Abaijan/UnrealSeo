@@ -1,6 +1,6 @@
 'use client';
 import React, { useState, useEffect } from "react";
-import axios from "axios";
+import axiosInstance from '../../utils/api';
 import {
     Header,
     DetailsBanner,
@@ -35,7 +35,7 @@ export default function OneOfProject({ params }: ProjectProps) {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const res = await axios.get(`http://178.253.42.15/api/our_project_detail/${params.id}`);
+                const res = await axiosInstance.get(`/our_project_detail/${params.id}`);
                 setDatas(res.data);
             } catch (err) {
                 console.error(err);

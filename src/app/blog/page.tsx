@@ -3,7 +3,6 @@ import React , { useEffect, useState }from 'react'
 
 import { Header,Footer  } from '../components'
 import BloglPageFirstBlock from '../components/blogPage/BlogPageFirstBlock'
-import axios from 'axios'
 
 
 export default function Blog() {

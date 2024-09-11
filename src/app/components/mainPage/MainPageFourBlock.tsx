@@ -1,6 +1,6 @@
 'use client';
 import React, { useEffect, useState } from 'react';
-import axios from 'axios';
+import axiosInstance from '../../utils/api';
 
 // Типизация данных
 interface QuoteData {
@@ -14,7 +14,7 @@ export const MainPageFourBlock = () => {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const res = await axios.get('http://178.253.42.15/api/quoteonmainpage/');
+                const res = await axiosInstance.get('/quoteonmainpage/');
                 setData(res.data.results[0]);
             } catch (error) {
                 console.error('Error fetching data:', error);

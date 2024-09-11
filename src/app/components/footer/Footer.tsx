@@ -1,7 +1,7 @@
 'use client';
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
-import axios from 'axios';
+import axiosInstance from '../../utils/api';
 
 // Тип для данных о социальных ссылках
 interface SocialLink {
@@ -16,7 +16,7 @@ export const Footer = () => {
 
   const fetchData = async () => {
     try {
-      const res = await axios.get('http://178.253.42.15/api/footer');
+      const res = await axiosInstance.get('/footer');
       return res.data.results;
     } catch (error) {
       console.log('Error fetching footer data:', error);
