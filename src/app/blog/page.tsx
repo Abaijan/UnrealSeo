@@ -18,7 +18,10 @@ export default function Blog() {
   return (
     <div>
         <section className="bg-[#ffffff] text-[black]">
-            <Header isBlog={true}/>
+            <section className="font-raleway text-[black]" >
+                <Header/>
+            </section>
+
             <BloglPageFirstBlock/>
             <Footer/>
         </section>

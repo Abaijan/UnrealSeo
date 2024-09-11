@@ -1,46 +1,51 @@
-'use client'
-import {Header,Footer, MainPageFirstBlock, MainPageFiveBlock, MainPageFourBlock, MainPageSecondBlock, MainPageThirdBlock,MainPageSixBlock, MainPageSevenBlock, MainPageEightBlock, MainPageTenBlock } from "../components";
-
-import {Suspense, useEffect, useState} from "react";
+'use client';
+import { Header, Footer, MainPageFirstBlock, MainPageFiveBlock, MainPageFourBlock, MainPageSecondBlock, MainPageThirdBlock, MainPageSixBlock, MainPageSevenBlock, MainPageEightBlock, MainPageTenBlock } from "../components";
+import { useEffect, useState } from "react";
 import Loading from "../../../src/app/loading";
 import axios from "axios";
+
+// Определяем тип для состояния данных
+interface MainPageData {
+    // Замените `any` на конкретные свойства данных
+    [key: string]: any;
+}
+
 export default function Main() {
-    const [data, setData] = useState(null);
+    const [data, setData] = useState<MainPageData | null>(null);
 
     useEffect(() => {
         const fetchData = async () => {
-            const res = await axios.get("http://178.253.42.15/api/mainpage/1/").catch((error) => {
-                console.log(error);
-            });
-            setData(res.data);
+            try {
+                const res = await axios.get("http://178.253.42.15/api/mainpage/1/");
+                setData(res.data);
+            } catch (error) {
+                console.error(error);
+            }
         };
-        fetchData().then((data) => {
-            if (data) setData(data);
-        });
+        fetchData();
     }, []);
 
     if (!data) {
-        return <Loading/>;
-    };
-  return (
-   <section className="font-raleway">
-      <Header  isBlog={false}/>
-       <Suspense fallback={<Loading/>}>
-               <section>
-                   <MainPageFirstBlock />
-                   <MainPageSecondBlock/>
-                   <div className="bg-[white] text-[black] font-raleway">
-                       <MainPageThirdBlock/>
-                       <MainPageFourBlock/>
-                   </div>
-                   <MainPageSixBlock/>
-                   <MainPageSevenBlock/>
-                   <MainPageEightBlock/>
-                   <MainPageTenBlock/>
-                   <hr></hr>
-               </section>
-       </Suspense>
-      <Footer/>  
-   </section>
-  );
+        return <Loading />;
+    }
+
+    return (
+        <section className="font-raleway">
+            <Header />
+            <section>
+                <MainPageFirstBlock />
+                <MainPageSecondBlock />
+                <div className="bg-[white] text-[black] font-raleway">
+                    <MainPageThirdBlock />
+                    <MainPageFourBlock />
+                </div>
+                <MainPageSixBlock />
+                <MainPageSevenBlock />
+                <MainPageEightBlock />
+                <MainPageTenBlock />
+                <hr />
+            </section>
+            <Footer />
+        </section>
+    );
 }

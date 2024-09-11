@@ -26,6 +26,9 @@ body {
 .black{
   background-color: black !important;
 }
+.white{
+  color: white !important;
+}
 @layer base {
   :root {
     --background: 0 0% 100%;

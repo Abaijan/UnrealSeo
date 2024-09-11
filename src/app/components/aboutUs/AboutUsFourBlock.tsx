@@ -1,18 +1,15 @@
 import React from "react";
 
-export const AboutUsFourBlock = () => {
+export const AboutUsFourBlock = ( data : any) => {
   return (
     <section className=" container  py-[100px] ">
       <div className="flex flex-col mt-[100px]">
         <div className="flex lg:flex-row flex-col gap-[40px] justify-between">
           <h2 className="font-raleway text-[40px] lg:text-[54px] leading-[45px] lg:leading-[4rem] z-20  font-bold">
-            “We are passionate about creating visually stunningare passionate
-            about creating{" "}
+           {data && data.data[0].name2}
           </h2>
           <span className="text-[18px] font-raleway  font-semibold  z-40">
-            We improve our clients marketing results with a data driven approach
-            and we are hell-bent on making it awesome. Our goal is to create a
-            new, data oriented{" "}
+
           </span>
         </div>
         <div className="flex xl:flex-row flex-col justify-between mt-[150px]">
@@ -23,7 +20,7 @@ export const AboutUsFourBlock = () => {
               </span>
               <div>
                 <h3 className=" text-[24px] font-semibold font-raleway mb-[20px]">
-                  Lets get acquainted
+                  {data && data.data[0].name3}
                 </h3>
                 <p className="text-[16px] font-raleway  lg:font-semibold">
                   We improve our clients marketing results with a data driven

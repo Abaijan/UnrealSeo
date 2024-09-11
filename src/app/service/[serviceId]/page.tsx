@@ -3,7 +3,7 @@ import { Header, ServiceIdPageFirstBlock,ServiceIdPageSecondBlock,ServiceIdPageT
 export default function ServiceId  () {
 return(
     <>
-        <Header isBlog={false}/>
+        <Header />
         <ServiceIdPageFirstBlock/>
         <ServiceIdPageSecondBlock/>
         <section className=' bg-[url("/img/32.png")] bg-contain bg-no-repeat bg-bottom'>

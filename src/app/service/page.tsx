@@ -15,7 +15,7 @@ export default function Service() {
   return (
     <div>
       <section className='bg-[url("/img/bg-sevice-page.png")] bg-cover bg-center bg-no-repeat  h-[902px]'>
-        <Header isBlog={false} />
+        <Header />
         <ServicePageFirstBlock />
       </section>
       <ServicePageSecondBlock />

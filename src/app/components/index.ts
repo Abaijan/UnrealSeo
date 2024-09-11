@@ -16,13 +16,13 @@ export {MainPageTenBlock} from './mainPage/MainPageTenBlock';
 
 
 ///about-us
-
 export { AboutUsFirstBlock } from './aboutUs/AboutUsFirstBlock';
+// export { AboutUsAfterSixBlock } from './aboutUs/AboutUsAfterSixBlock';
 export { AboutUsSecondBlock } from './aboutUs/AboutUsSecondBlock';
 export { AboutUsThreeBlock } from './aboutUs/AboutUsThreeBlock';
 export { AboutUsFourBlock } from './aboutUs/AboutUsFourBlock';
 export { AboutUsSevenBlock } from './aboutUs/AboutUsSevenBlock';
-export {AboutUsAfterSixBlock} from './aboutUs/AboutAfterSixBlock'
+export { AboutUsSixBlock } from './aboutUs/AboutUsSixBlock';
 
 ///service
 export { ServicePageFirstBlock } from './ServicePage/ServicePageFirstBlock';
@@ -46,7 +46,6 @@ export {PortfolioPageFirstBlock} from './portfolio/PortfolioPageFirstBlock';
 export {PortfolioPageThirdBlock} from './portfolio/PortfolioPageThirdBlock';
 
 //Blog
-export {BloglPageFirstBlock} from './blogPage/BlogPageFirstBlock';
 
 //Projects
 export {DetailsBanner} from './ProjectsDetail/DetailsBanner'

@@ -5,7 +5,7 @@ import 'swiper/css';
 import { Navigation, Pagination } from 'swiper/modules';
 import 'swiper/css';
 
-const AboutUsSixBlock = () => {
+export const AboutUsSixBlock = () => {
   const slides = [1, 2, 3, 4, 5,6,7];
   const weight = slides.length * 400;
 
@@ -36,4 +36,4 @@ const AboutUsSixBlock = () => {
   );
 };
 
-export default AboutUsSixBlock;
+

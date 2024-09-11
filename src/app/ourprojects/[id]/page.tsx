@@ -1,55 +1,69 @@
-'use client'
-import React, {useState, useEffect} from "react";
+'use client';
+import React, { useState, useEffect } from "react";
+import axios from "axios";
 import {
     Header,
     DetailsBanner,
-    DetailsBackground,
     DetailsDescription,
     DetailsVideoComponent,
     InfoBlockDetail,
     MainPageTenBlock,
-    Footer} from "../../components";
-import axios from "axios";
-import {Suspense} from "react";
+    Footer
+} from "../../components";
 import Loading from "../../../../src/app/loading";
 
-const OneOfProject = (prop: number) => {
-    const [datas, setDatas] = useState<BlogPageFirstBlockProps>(null);
+// Интерфейс для пропсов
+interface ProjectProps {
+    params: {
+        id: string;
+    };
+}
 
+// Интерфейс для данных проекта
+interface ProjectData {
+    banner: string;
+    banner3: string;
+    description: string;
+    video_url: string;
+    name: string;
+    // Добавьте другие поля по необходимости
+}
+
+export default function OneOfProject({ params }: ProjectProps) {
+    const [datas, setDatas] = useState<ProjectData | null>(null);
 
     useEffect(() => {
         const fetchData = async () => {
-            const res = await axios.get(`http://178.253.42.15/api/our_project_detail/${prop.params.id}`).catch(err => console.log(err))
-            setDatas(res.data);
+            try {
+                const res = await axios.get(`http://178.253.42.15/api/our_project_detail/${params.id}`);
+                setDatas(res.data);
+            } catch (err) {
+                console.error(err);
+            }
         }
         fetchData();
-    }, [axios])
+    }, [params.id]);
+
+    if (!datas) {
+        return <Loading />;
+    }
     console.log(datas)
     return (
         <section>
-            <Header isBlog={false}/>
-            <Suspense fallback={<Loading/>}>
-                {datas && (
-                    <>
-                        <div className="container px-[10px] pb-[140px] xl:px-[120px]  ">
-                            <DetailsBanner data={datas && datas}/>
-                        </div>
-                        <div
-                            className={`w-full xl:h-[400px] md:h-[300px] mb-[120px] h-[200px] bg-[url(${datas && datas.banner})] bg-cover bg-center bg-no-repeat`}>
-                            <img className="w-full h-full" src={datas && datas.banner3} alt=""/>
-                        </div>
-                        <DetailsDescription data={datas && datas}/>
-                        <DetailsVideoComponent data={datas && datas}/>
-                        <InfoBlockDetail data={datas && datas}/>
-                        <MainPageTenBlock/>
-                    </>
-
-                )
-                }
-            </Suspense>
-            <Footer/>
+            <Header />
+            <div className="container px-[10px] pb-[140px] xl:px-[120px]">
+                <DetailsBanner data={datas} />
+            </div>
+            <div
+                className="w-full xl:h-[400px] md:h-[300px] mb-[120px] h-[200px]"
+                style={{ backgroundImage: `url(${datas.banner})`, backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat' }}>
+                <img className="w-full h-full" src={datas.banner3} alt="" />
+            </div>
+            <DetailsDescription data={datas} />
+            <DetailsVideoComponent data={datas} />
+            <InfoBlockDetail data={datas} />
+            <MainPageTenBlock />
+            <Footer />
         </section>
-    )
-
+    );
 }
-export default OneOfProject

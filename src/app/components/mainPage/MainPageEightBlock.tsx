@@ -1,52 +1,57 @@
-'use client'
-import React, {useEffect, useState} from "react";
-import axios from "axios";
-import Link from "next/link";
+'use client';
+import React, { useEffect, useState } from 'react';
+import axios from 'axios';
+import Link from 'next/link';
+
+// Типизация данных
+interface ProjectCostData {
+    image: string;
+    name: string;
+    description: string;
+}
 
 export const MainPageEightBlock = () => {
-    const [data, setData] = useState([]);
+    const [data, setData] = useState<ProjectCostData | null>(null);
+    const [loading, setLoading] = useState<boolean>(true);
 
     const fetchData = async () => {
-
-        const res = await axios.get("http://178.253.42.15/api/projectcost/1/").catch((error) => {
-            console.log(error);
-        });
-        return await res.data
+        try {
+            const res = await axios.get('http://178.253.42.15/api/projectcost/1/');
+            setData(res.data);
+        } catch (error) {
+            console.error('Error fetching project cost data:', error);
+        } finally {
+            setLoading(false);
+        }
     };
 
     useEffect(() => {
-        fetchData().then((data) => {
-            if (data) setData(data);
-        });
-
-        if (!data) {
-            return <p>Loading...</p>;
-        }
+        fetchData();
     }, []);
-    console.log(data)
 
+    if (loading) {
+        return <p>Loading...</p>;
+    }
 
     return (
-        <section className=" container  md:mb-[100px] flex justify-center items-center">
-            <div style={{backgroundImage: `url(${data && data.image})`}}
-                 className={`w-[1280px] h-[300px] md:h-[544px] bg-no-repeat bg-contain bg-center font-raleway flex justify-center items-center flex-col  text-center gap-3`}>
+        <section className="container md:mb-[100px] flex justify-center items-center">
+            <div
+                style={{ backgroundImage: `url(${data?.image})` }}
+                className={`w-[1280px] h-[300px] md:h-[544px] bg-no-repeat bg-contain bg-center font-raleway flex justify-center items-center flex-col text-center gap-3`}
+            >
                 <div className="mb-[20px]">
-                    {" "}
-                    <h2 className="text-[22px] lg:text-[60px] xl:text-[86px] font-raleway font-extrabold   lg:leading-[6rem] ">
-                        {data && data.name}
+                    <h2 className="text-[22px] lg:text-[60px] xl:text-[86px] font-raleway font-extrabold lg:leading-[6rem]">
+                        {data?.name}
                     </h2>
                     <span className="text-[12px] lg:text-[24px]">
-            {" "}
-                        {data && data.description}
+            {data?.description}
           </span>
                 </div>
                 <Link href="/contacts">
-                    <button
-                        className="pt-[10px] pb-[10px] pr-[20px] pl-[20px] bg-[#84FF00] font-bold font-raleway text-[12px] bg:text-[18px] rounded-[10px] text-[black]  z-20">
-                        расчитать
+                    <button className="pt-[10px] pb-[10px] pr-[20px] pl-[20px] bg-[#84FF00] font-bold font-raleway text-[12px] lg:text-[18px] rounded-[10px] text-[black] z-20">
+                        рассчитать
                     </button>
                 </Link>
-
             </div>
         </section>
     );

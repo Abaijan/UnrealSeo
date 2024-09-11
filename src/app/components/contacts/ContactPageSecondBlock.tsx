@@ -32,7 +32,7 @@ export const ContactPageSecondBlock = () => {
         <section className="container">
             <div className="font-raleway flex flex-col justify-center items-start text-start xl:p-8">
                 <h1 className="text-white text-[24px] font-bold mb-[30px]">
-                    Let's get started!
+                    Let s get started!
                 </h1>
 
                 <div

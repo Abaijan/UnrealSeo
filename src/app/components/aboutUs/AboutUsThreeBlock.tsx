@@ -1,36 +1,68 @@
-import React from "react";
+'use client'
+import React, { useEffect, useState } from "react";
+import axios from "axios";
 
 export const AboutUsThreeBlock = () => {
+  const [data, setData] = useState<any>(null); // тип данных можно уточнить, если известен
+
+  const fetchData = async () => {
+    try {
+      const res = await axios.get("http://178.253.42.15/api/statistic/");
+      return res.data?.results || null; // возвращаем null, если нет данных
+    } catch (error) {
+      console.error(error);
+      return null; // возвращаем null в случае ошибки
+    }
+  };
+
+  useEffect(() => {
+    fetchData().then((data) => {
+      if (data && data.length > 0) {
+        setData(data[0]);
+      }
+    });
+  }, []);
+
+  if (!data) return <div>Loading...</div>; // показываем лоадер, пока данные загружаются
+
   return (
-    <section className=" container relative">
-      <div className="flex flex-col xl:flex-row items-start">
-        <img className=" absolute top-[400px] md:top-[00px] md:left-[00px] md:rotate-180 z-[1] rotate-180 left-[0] xl:relative xl:rotate-0 xl:top-0 lg:rotate-180 lg:top-[-100px] lg:left-[70px] xl:mt-[-250px]"  src="/img/AboutUs-3block-img.svg" alt="" />
-        <div className="flex flex-col w-[40vw]"> 
-          <div className="flex flex-col mt-[40px] ">
+      <section className="container relative">
+        <div className="flex flex-col xl:flex-row items-start">
+          <img
+              className="absolute top-[130vw] left-[30vw] md:top-[30vw] md:w-[60vw] md:left-[30vw] w-[50vw] z-[0] xl:relative xl:rotate-0 xl:top-0 lg:top-[30vw] lg:left-[30vw] xl:left-0 xl:mt-[10vw]"
+              src={data.image}
+              alt="Statistics Image"
+          />
+          <div className="flex flex-col w-[40vw]">
+            <div className="z-[2] flex flex-col mt-[40px]">
             <span className="font-raleway font-semibold text-[18px]">
               клиентов
             </span>
-            <span className="font-raleway font-semibold text-[100px]">
-              100+
+              <span className="font-raleway font-semibold text-[100px]">
+              {data.clients}+
             </span>
-            <hr />
-          </div>
-          <div className="flex flex-col  mt-[40px]">
+              <hr />
+            </div>
+            <div className="z-[2] flex flex-col mt-[40px]">
             <span className="font-raleway font-semibold text-[18px]">
               лет на рынке
             </span>
-            <span className="font-raleway font-semibold text-[100px]">5+</span>
-            <hr />
-          </div>
-          <div className="flex flex-col  mt-[40px]">
+              <span className="font-raleway font-semibold text-[100px]">
+              {data.on_market}+
+            </span>
+              <hr />
+            </div>
+            <div className="z-[2] flex flex-col mt-[40px]">
             <span className="font-raleway font-semibold text-[18px]">
               проектов
             </span>
-            <span className="font-raleway font-semibold text-[100px]">90+</span>
-            <hr />
+              <span className="font-raleway font-semibold text-[100px]">
+              {data.projects}+
+            </span>
+              <hr />
+            </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
   );
 };

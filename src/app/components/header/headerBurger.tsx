@@ -1,19 +1,22 @@
 import React, {useState, useEffect} from 'react';
 import Link from 'next/link';
 
-export default function HeaderBurger({ isBlog }: { isBlog: boolean }) {
-    const [click, setClick] = useState(false);
+export default function HeaderBurger( {isBlog}: {isBlog: boolean}) {
     const [blog, setBlog] = useState(false);
+    const [click, setClick] = useState(false);
 
     useEffect(() => {
-        if (isBlog) {
-            setBlog(true);
-        }
-    }, [isBlog]); // Добавляем зависимость
+        setBlog(isBlog);
+    }, [isBlog]);
 
     const handleClick = (): void => {
         setClick((prev) => !prev);
+        if(isBlog) {
+            setBlog((prev) => !prev);
+        }
+
     };
+
 
     return (
         <>
@@ -23,16 +26,16 @@ export default function HeaderBurger({ isBlog }: { isBlog: boolean }) {
                 </span>
                 <button className="flex z-[200] lg:hidden cursor-pointer" onClick={handleClick}>
                     <svg width="32" height="32" className="w-[32px] h-[32px] md:w-[70px] md:h-[70px]" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M27.9997 13.333H9.33301" stroke={!blog ? 'black' : 'white'} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                        <path d="M28 8H4" stroke={!blog ? 'black' : 'white'} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                        <path d="M28 18.667H4" stroke={!blog ? 'black' : 'white'} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                        <path d="M27.9997 24H9.33301" stroke={!blog ? 'black' : 'white'} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                        <path d="M27.9997 13.333H9.33301" stroke={blog ? 'black' : 'white'} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                        <path d="M28 8H4" stroke={blog ? 'black' : 'white'} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                        <path d="M28 18.667H4" stroke={blog ? 'black' : 'white'} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                        <path d="M27.9997 24H9.33301" stroke={blog ? 'black' : 'white'} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                     </svg>
                 </button>
             </div>
 
             {click && (
-                <div className="black z-[100] pt-[120px] py-[60px] px-[30px] absolute w-full h-[890px] overflow-hidden body-scroll-lock scroll-smooth left-0 top-0">
+                <div className="black white z-[100] pt-[120px] py-[60px] px-[30px] absolute w-full h-[890px] overflow-hidden body-scroll-lock scroll-smooth left-0 top-0">
                     <ul className=" mt-[30px] z-[101] flex flex-col justify-start gap-[10px] left-0 top-0 text-[40px]">
                         <li>
                             <Link href="/main">Главная</Link>
