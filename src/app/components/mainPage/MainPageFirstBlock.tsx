@@ -36,10 +36,10 @@ export const MainPageFirstBlock = () => {
             <div className='absolute md:top-[-3%] md:left-[85%] lg:top-[-7%] top-[1%] left-[65%] lg:left-[90%] z-10'>
                 <img className='w-[100%] h-[100%] rotate-180' src={data.image} alt="mainPhoto" />
             </div>
-            <div className='absolute md:left-[-10%] md:top-[30%] left-[-90%] md:w-[80%] md:h-[80%] lg:left-auto lg:top-[20%] top-[10%] z-40'>
+            <div className='absolute md:left-[-10%] md:top-[30%] left-[-90%] md:w-[80%] md:h-[80%] lg:left-auto lg:top-[20%] top-[10%] z-10'>
                 <img src={data.image} alt="mainPhoto" />
             </div>
-            <div className='absolute md:hidden overflow-hidden left-[-60%] w-[60%] h-[60%] origin-center rotate-90 top-[-20%] lg:left-auto lg:top-auto z-40'>
+            <div className='absolute md:hidden overflow-hidden left-[-60%] w-[60%] h-[60%] origin-center rotate-90 top-[-20%] lg:left-auto lg:top-auto z-10'>
                 <img src={data.image} alt="mainPhoto" />
             </div>
 

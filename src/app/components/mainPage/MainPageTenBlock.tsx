@@ -1,6 +1,6 @@
 import React from 'react'
 import Link from "next/link";
-export const MainPageTenBlock =() => {
+export const MainPageTenBlock = () => {
   return (
     <section className='container py-[40px] lg:py-0 '>
       

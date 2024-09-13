@@ -63,6 +63,7 @@ export default function OneOfProject({ params }: ProjectProps) {
             <DetailsVideoComponent data={datas} />
             <InfoBlockDetail data={datas} />
             <MainPageTenBlock />
+            <hr />
             <Footer />
         </section>
     );

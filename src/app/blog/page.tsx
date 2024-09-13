@@ -1,9 +1,8 @@
 'use client'
 import React , { useEffect, useState }from 'react'
 
-import { Header,Footer  } from '../components'
-import BloglPageFirstBlock from '../components/blogPage/BlogPageFirstBlock'
-
+import { Header,Footer, MainPageTenBlock  } from '../components'
+import  BloglPageFirstBlock  from '../components/blogPage/BlogPageFirstBlock'
 
 export default function Blog() {
     const [isBlog, setBlog] = useState(false)
@@ -22,6 +21,8 @@ export default function Blog() {
             </section>
 
             <BloglPageFirstBlock/>
+            <MainPageTenBlock/>
+            <hr/>
             <Footer/>
         </section>
 

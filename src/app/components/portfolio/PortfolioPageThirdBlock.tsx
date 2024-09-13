@@ -1,12 +1,26 @@
 "use client";
 import { Swiper, SwiperSlide } from 'swiper/react';
+import { useState, useEffect } from 'react';
+import axiosInstance from '../../utils/api';
 import 'swiper/css';
 
 import { Navigation, Pagination } from 'swiper/modules';
 import 'swiper/css';
 
 export const PortfolioPageThirdBlock = () => {
-  const slides = [1, 2, 3, 4, 5,6,7];
+ const [slides, setSlides] = useState([]);
+
+ useEffect(() => {
+   const fetchData = async () => {
+     try {
+       const res = await axiosInstance.get('/portfolio/');
+       setSlides(res.data.results);
+     } catch (error) {
+       console.error(error);
+     }
+   };
+   fetchData();
+ })
   const weight = slides.length * 400;
 
   return (

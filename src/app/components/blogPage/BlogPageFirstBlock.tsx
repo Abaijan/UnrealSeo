@@ -55,6 +55,5 @@ interface BlogPageFirstBlockProps {
         </section>
     );
 };
-
 export default BlogPageFirstBlock;
 

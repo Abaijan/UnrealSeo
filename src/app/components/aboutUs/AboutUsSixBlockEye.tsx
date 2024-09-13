@@ -1,6 +1,6 @@
 import React from "react";
 
-export const AboutUsAfterSixBlock = () => {
+export const AboutUsSixBlockEye = () => {
     const background = "#D987FF";
 
     return (
@@ -19,7 +19,7 @@ export const AboutUsAfterSixBlock = () => {
                     </p>
                 </div>
                 <div className="absolute xl:relative xl:top-auto xl:left-auto xl:w-[847px] xl:top-[600px] lg:top-[1000px] md:top-[750px] top-[500px]">
-                    <h3 className="font-raleway text-[34px] lg:text-[54px] leading-[40px] lg:leading-[4rem] font-bold">
+                    <h3 className="font-raleway text-[34px] xl:absolute lg:text-[54px] leading-[40px] lg:leading-[4rem] font-bold">
                         “We are passionate about creating visually stunning designs and
                         providing excellent service to our clients.”
                     </h3>

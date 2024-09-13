@@ -1,12 +1,36 @@
+'use client';
 import React from "react";
+import { useState, useEffect } from "react";
+import axiosInstance from "../../utils/api";
+import Loading from "../..//loading";
 
-export const AboutUsFourBlock = ( data : any) => {
+export const AboutUsFourBlock = () => {
+  const [data, setData] = useState<any>(null);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const res = await axiosInstance.get("/lovework/");
+        return res.data;
+      } catch (error) {
+        console.error(error);
+        return null; // возвращаем null, если произошла ошибка
+      }
+    };
+
+    fetchData().then((data) => {
+      if (data) setData(data.results[0]); // проверяем, есть ли данные перед их использованием
+    });
+  }, []);
+
+  if (!data) return <Loading />;
+
   return (
     <section className=" container  py-[100px] ">
       <div className="flex flex-col mt-[100px]">
         <div className="flex lg:flex-row flex-col gap-[40px] justify-between">
           <h2 className="font-raleway text-[40px] lg:text-[54px] leading-[45px] lg:leading-[4rem] z-20  font-bold">
-           {data && data.data[0].name2}
+            {data.name}
           </h2>
           <span className="text-[18px] font-raleway  font-semibold  z-40">
 
@@ -19,13 +43,11 @@ export const AboutUsFourBlock = ( data : any) => {
                 01
               </span>
               <div>
-                <h3 className=" text-[24px] font-semibold font-raleway mb-[20px]">
-                  {data && data.data[0].name3}
-                </h3>
+                {/*<h3 className=" text-[24px] font-semibold font-raleway mb-[20px]">*/}
+                {/*  text*/}
+                {/*</h3>*/}
                 <p className="text-[16px] font-raleway  lg:font-semibold">
-                  We improve our clients marketing results with a data driven
-                  approach and we are hell-bent on making it awesome. Our goal
-                  is to create a new,
+                  {data.description1}
                 </p>
               </div>
             </div>
@@ -34,14 +56,12 @@ export const AboutUsFourBlock = ( data : any) => {
                 02
               </span>
               <div>
-                <h3 className="text-[24px] font-semibold font-raleway mb-[20px]">
-                  {" "}
-                  Our goal is to create
-                </h3>
+                {/*<h3 className="text-[24px] font-semibold font-raleway mb-[20px]">*/}
+                {/*  {" "}*/}
+                {/*  Our goal is to create*/}
+                {/*</h3>*/}
                 <p className="text-[16px] font-raleway lg:font-semibold">
-                  We improve our clients marketing results with a data driven
-                  approach and we are hell-bent on making it awesome. Our goal
-                  is to create 
+                  {data.description2}
                 </p>
               </div>
             </div>
@@ -49,7 +69,7 @@ export const AboutUsFourBlock = ( data : any) => {
           <div>
             <img
               className="ml-[10px] lg:w-[530px] lg:h-[580px]"
-              src="/img/AboutUs-4img.png"
+              src={data.image}
               alt=""
             />
           </div>

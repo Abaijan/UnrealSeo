@@ -9,6 +9,7 @@ export default function Contacts() {
       <ContactPageSecondBlock/>
       <ContactPageThirdBlock/>
       <MainPageTenBlock/>
+        <hr/>
       <Footer/>
     </>  )
 }
