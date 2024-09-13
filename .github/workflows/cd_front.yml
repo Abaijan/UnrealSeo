@@ -16,4 +16,5 @@ jobs:
         password: ${{ secrets.PASSWORD }}
         port: ${{ secrets.PORT }}
         script: |
+          cd unreal
           echo "${{ secrets.UNREAL_PASSWORD }}" | sudo -S sh update-front.sh
