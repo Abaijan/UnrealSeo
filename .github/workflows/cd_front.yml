@@ -1,0 +1,20 @@
+name: UPDATE FRONT
+on:
+  push:
+    branches: [ "main" ]
+jobs:
+
+  build:
+    name: BUILD AND RUN
+    runs-on: ubuntu-latest
+    steps:
+    - name: executing remote ssh commands using password
+      uses: appleboy/ssh-action@v0.1.7
+      with:
+        host: ${{ secrets.HOST }}
+        username: ${{ secrets.USERNAME }}
+        password: ${{ secrets.PASSWORD }}
+        port: ${{ secrets.PORT }}
+        script: |
+          cd unreal
+          echo "${{ secrets.UNREAL_PASSWORD }}" | sudo -S sh update-front.sh
