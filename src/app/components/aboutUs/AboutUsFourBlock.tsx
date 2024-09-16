@@ -24,9 +24,9 @@ export const AboutUsFourBlock = () => {
   }, []);
 
   if (!data) return <Loading />;
-
+console.log(data)
   return (
-    <section className=" container  py-[100px] ">
+    <section className=" container px-[40px]  py-[100px] ">
       <div className="flex flex-col mt-[100px]">
         <div className="flex lg:flex-row flex-col gap-[40px] justify-between">
           <h2 className="font-raleway text-[40px] lg:text-[54px] leading-[45px] lg:leading-[4rem] z-20  font-bold">
@@ -43,9 +43,9 @@ export const AboutUsFourBlock = () => {
                 01
               </span>
               <div>
-                {/*<h3 className=" text-[24px] font-semibold font-raleway mb-[20px]">*/}
-                {/*  text*/}
-                {/*</h3>*/}
+                <h3 className=" text-[24px] font-semibold font-raleway mb-[20px]">
+                  How we love work
+                </h3>
                 <p className="text-[16px] font-raleway  lg:font-semibold">
                   {data.description1}
                 </p>
@@ -56,10 +56,10 @@ export const AboutUsFourBlock = () => {
                 02
               </span>
               <div>
-                {/*<h3 className="text-[24px] font-semibold font-raleway mb-[20px]">*/}
-                {/*  {" "}*/}
-                {/*  Our goal is to create*/}
-                {/*</h3>*/}
+                <h3 className="text-[24px] font-semibold font-raleway mb-[20px]">
+                  {" "}
+                  Our goal is to create
+                </h3>
                 <p className="text-[16px] font-raleway lg:font-semibold">
                   {data.description2}
                 </p>

@@ -36,7 +36,6 @@ export default function AboutUs() {
                 <AboutUsThreeBlock />
             </div>
             <AboutUsFourBlock />
-            <AboutUsSixBlockEye />
             <MainPageSevenBlock />
             <AboutUsSixBlockEye />
             <MainPageThirdBlock />
