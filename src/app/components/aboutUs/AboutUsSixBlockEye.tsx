@@ -6,7 +6,6 @@ import React from "react";
 import Image from "next/image";
 
 export const AboutUsSixBlockEye = () => {
-    const background = "#D987FF";
     const [data, setData] = useState<any>(null);
     useEffect(() => {
         const fetchData = async () => {
@@ -27,10 +26,9 @@ export const AboutUsSixBlockEye = () => {
     console.log(data)
 
     return (
-        <section className="container pb-[200px]">
-
+        <section className="container lg:pb-[200px]">
             <section className="flex relative flex-col gap-[40px] lg:flex-row min-h-screen">
-                <div className="relative flex items-center justify-center  max-h-[847px] w-[847px]  bg-black text-white">
+                <div className="relative flex items-center justify-center w-full lg:w-[847px] h-[40vh] lg:h-[847px] bg-black text-white">
                     <Image
                         src={data.image2}
                         alt="Eye and Moon"
@@ -38,20 +36,26 @@ export const AboutUsSixBlockEye = () => {
                         objectFit="cover"
                         className="opacity-80"
                     />
-
                 </div>
-                <div className="relative flex items-center justify-beteen max-h-[847px] w-[30%] text-white">
-                    <Image layout="fill"
-                           src={data.image3}
-                           alt="Eye and Moon"
-                           objectFit="cover"
+
+                <div className="relative translate-y-[-50%] lg:translate-y-0   flex items-center justify-center lg:absolute  lg:top-0 lg:left-2/3 top-0 left-1/2 lg:w-[30%] w-[50%] md:w-[30%] h-[40vh] lg:h-[847px] text-white">
+                    <Image
+                        src={data.image3}
+                        alt="Additional Image"
+                        layout="fill"
+                        objectFit="cover"
                     />
-                    <p className='absolute text-[black] left-[5%] top-[3%] font-bold text-[18px] w-[85%] font-raleway'>{data.description}</p>
-
+                    <p className='absolute text-[black]  left-[5%] top-[3%] font-bold text-[12px] lg:text-[18px] w-[85%] font-raleway'>
+                        {data.description}
+                    </p>
                 </div>
-                <h2 className='absolute top-[50%] left-[30%] font-bold text-[54px] w-[60%] font-raleway'>{data.name}</h2>
-            </section>
 
+                <h2 className=' translate-y-[-250%] lg:absolute top-[50%] left-[30%] font-bold w-full  text-[34px] lg:w-[60%] font-raleway'>
+                    {data.name}
+                </h2>
+            </section>
         </section>
+
+
     );
 };

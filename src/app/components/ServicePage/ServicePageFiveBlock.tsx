@@ -26,10 +26,10 @@ export const ServicePageFiveBlock = () => {
   if(!data) return <Loading/>
   return (
     <section className=" container">
-      <div className="space-y-6 pt-[100px] pb-[100px]  font-raleway">
+      <div className="space-y-6 lg:px-[40px] xl:px-[120px] pt-[100px] pb-[100px]  font-raleway">
         {data.map((item) => (
             <div key={item.id} className="grid md:grid-cols-3 grid-cols-1 border-b pb-14">
-              <span className="text-[32px] font-semibold">{item.number}/</span>
+              <span className="text-[32px] ">{item.number}/</span>
               <h2 className="text-[34px] font-semibold w-[200px]">
                 {item.title}
               </h2>

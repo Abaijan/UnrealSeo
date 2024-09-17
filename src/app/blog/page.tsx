@@ -1,7 +1,7 @@
 'use client'
 import React , { useEffect, useState }from 'react'
 
-import { Header,Footer, MainPageTenBlock  } from '../components'
+import { Header,Footer, News, MainPageTenBlock  } from '../components'
 import  BloglPageFirstBlock  from '../components/blogPage/BlogPageFirstBlock'
 
 export default function Blog() {
@@ -20,6 +20,7 @@ export default function Blog() {
                 <Header/>
             </section>
             <BloglPageFirstBlock/>
+            <News/>
             <MainPageTenBlock/>
             <hr/>
             <Footer/>

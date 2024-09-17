@@ -28,17 +28,14 @@ console.log(data)
   return (
     <section className=" container px-[40px]  py-[100px] ">
       <div className="flex flex-col mt-[100px]">
-        <div className="flex lg:flex-row flex-col gap-[40px] justify-between">
-          <h2 className="font-raleway text-[40px] lg:text-[54px] leading-[45px] lg:leading-[4rem] z-20  font-bold">
+        <div className="flex lg:flex-row  flex-col gap-[30px] justify-between">
+          <h2 className="font-raleway  text-[20px] lg:text-[54px] leading-[35px] md:leading:[5rem] lg:leading-[4rem] z-20  font-bold">
             {data.name}
           </h2>
-          <span className="text-[18px] font-raleway  font-semibold  z-40">
-
-          </span>
         </div>
-        <div className="flex xl:flex-row flex-col justify-between mt-[150px]">
-          <div className="mb-[50px] lg:mb-[40px] w-[380px] ">
-            <div className="flex gap-5 flex-row lg:w-[521px] mb-[60px]">
+        <div className="flex lg:flex-row flex-col justify-between mt-[150px]">
+          <div className="mb-[50px] lg:mb-[40px] max-w-[380px] ">
+            <div className="flex gap-5 flex-row xl:w-[521px] lg:max-w-[521px] mb-[60px]">
               <span className=" text-[24px] font-semibold font-raleway ">
                 01
               </span>
@@ -51,7 +48,7 @@ console.log(data)
                 </p>
               </div>
             </div>
-            <div className="flex flex-row gap-2 lg:w-[521px] mb-[60px]">
+            <div className="flex flex-row gap-2 xl:w-[521px] lg:max-w-[521px] mb-[60px]">
               <span className="text-[24px] lg:font-semibold font-raleway ">
                 02
               </span>
