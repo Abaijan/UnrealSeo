@@ -19,7 +19,6 @@ export default function Blog() {
             <section className="font-raleway text-[black]" >
                 <Header/>
             </section>
-
             <BloglPageFirstBlock/>
             <MainPageTenBlock/>
             <hr/>
