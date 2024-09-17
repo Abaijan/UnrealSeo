@@ -1,5 +1,5 @@
 import React from 'react';
-
+import Image from "next/image";
 // Определяем интерфейс для пропсов
 interface DetailsBannerProps {
     data: {
@@ -17,7 +17,7 @@ export const DetailsBanner: React.FC<DetailsBannerProps> = ({ data }) => {
                 <h1 className="font-bold text-5xl font-raleway">{data.name}</h1>
                 <p className="text-[18px] font-raleway max-w-[400px]">{data.description}</p>
             </div>
-            <img className="lg:mt-[40px] w-full lg:w-[60%]" src={data.banner} alt="banner"/>
+            <Image width={500} height={500} className="lg:mt-[40px] w-full lg:w-[60%]" src={data.banner} alt="banner"/>
         </section>
     );
 };

@@ -1,4 +1,5 @@
 import React from 'react';
+import Image from "next/image";
 
 interface CardProps {
     data: {
@@ -13,7 +14,7 @@ export const Card: React.FC<CardProps> = ({ data }) => {
 
     return (
         <div className="p-4 bg-gray-200 rounded-lg shadow-md">
-            <img src={image} alt={name} className="w-full h-40 object-cover rounded-md" />
+            <Image src={image} alt={name} width={500} height={500} className="w-full h-auto object-cover rounded-md" />
             <div className='font-raleway font-medium text-[16px] flex flex-col text-start mt-[10px]'>
                 <span>{name}</span> {/* Use data.name */}
                 <span>3D video, Re branding</span>

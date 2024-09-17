@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import Link from 'next/link';
-
+import Image from "next/image";
 export default function HeaderBurger( {isBlog}: {isBlog: boolean}) {
     const [blog, setBlog] = useState(false);
     const [click, setClick] = useState(false);
@@ -22,10 +22,10 @@ export default function HeaderBurger( {isBlog}: {isBlog: boolean}) {
         <>
             <div className="md:w-auto  w-full h-[120px] flex justify-between overflow-y-hidden items-center px-4">
                 <span className="block z-[200] md:hidden  lg:hidden">
-                    <img src="/img/logo.jpg" alt="logo" className="z-[201] w-[40px] h-[40px] md:w-[70px] md:h-[70px]" />
+                    <Image src="/img/logo.jpg" alt="logo" width={150} height={150} className="z-[201] w-[100px] h-[100px] cursor-pointer" />
                 </span>
                 <button className="flex z-[200] lg:hidden cursor-pointer" onClick={handleClick}>
-                    <svg width="32" height="32" className="w-[32px] h-[32px] md:w-[70px] md:h-[70px]" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <svg width="32" height="32" className="w-[60px] h-[60px] md:w-[70px] md:h-[70px]" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M27.9997 13.333H9.33301" stroke={blog ? 'black' : 'white'} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                         <path d="M28 8H4" stroke={blog ? 'black' : 'white'} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                         <path d="M28 18.667H4" stroke={blog ? 'black' : 'white'} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />

@@ -3,7 +3,7 @@ import React, {useState, useEffect} from "react";
 import Link from "next/link";
 import HeaderBurger from './headerBurger';
 import {useRouter} from "next/navigation"; // Ensure this is correct for your setup
-
+import Image from "next/image";
 export const Header = () => {
     const router = useRouter();
     const [isBlog, setIsBlog] = useState(false);
@@ -19,12 +19,8 @@ export const Header = () => {
         <section className="container">
             <header>
                 <div className="flex justify-between items-center">
-          <span className="hidden min-w-[62px] md:block z-[200]">
-            <img
-                src="/img/logo.jpg"
-                alt="logo"
-                className="md:w-[100px] md:h-[100px] z-[200] w-[32px] h-[32px]"
-            />
+          <span className="hidden  md:block z-[200]">
+          <Image src="/img/logo.jpg" className="cursor-pointer h-[100px] w-[100px]" width={150} height={150} alt="logo"/>
           </span>
                     <ul className="lg:text-lg hidden lg:flex md:gap-[40px] lg:gap-[4vw] text-xl items-center">
                         <li><Link href="/main">Главная</Link></li>

@@ -11,7 +11,7 @@ import {
     Footer
 } from "../../components";
 import Loading from "../../../../src/app/loading";
-
+import Image from "next/image";
 // Интерфейс для пропсов
 interface ProjectProps {
     params: {
@@ -57,7 +57,7 @@ export default function OneOfProject({ params }: ProjectProps) {
             <div
                 className="w-full xl:h-[400px] md:h-[300px] mb-[120px] h-[200px]"
                 style={{ backgroundImage: `url(${datas.banner})`, backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat' }}>
-                <img className="w-full h-full" src={datas.banner3} alt="" />
+                <Image width={700} height={700} className="w-full h-full" src={datas.banner3} alt="" />
             </div>
             <DetailsDescription data={datas} />
             <DetailsVideoComponent data={datas} />
