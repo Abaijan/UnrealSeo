@@ -1,47 +1,86 @@
 "use client";
-import { Swiper, SwiperSlide } from 'swiper/react';
 import { useState, useEffect } from 'react';
 import axiosInstance from '../../utils/api';
-import 'swiper/css';
+import Image from 'next/image';
+import Loading from '../../loading';
 
-import { Navigation, Pagination } from 'swiper/modules';
-import 'swiper/css';
+
+interface WorkProcessItem {
+    id: number;
+    name: string;
+    description: string;
+    image: string;
+}
+interface WorkProcess {
+    id: number;
+    name: string;
+    work_process: WorkProcessItem[];
+}
+
 
 export const PortfolioPageThirdBlock = () => {
- const [slides, setSlides] = useState([]);
+    const [slides, setSlides] = useState<WorkProcess | null>(null); // Изначально null, так как это объект
+    const [weight, setWeight] = useState(0);
 
- useEffect(() => {
-   const fetchData = async () => {
-     try {
-       const res = await axiosInstance.get('/portfolio/');
-       setSlides(res.data.results);
-     } catch (error) {
-       console.error(error);
-     }
-   };
-   fetchData();
- })
-  const weight = slides.length * 400;
+    useEffect(() => {
+        const fetchData = async () => {
+            try {
+                const res = await axiosInstance.get('/workprocess/');
+                setSlides(res.data.results[0]); // Сохраняем первый объект work process
+            } catch (error) {
+                console.error(error);
+            }
+        };
+        fetchData();
+    }, []); // Пустой массив зависимостей
 
-  return (
-    <section className='container py-[100px]'>
-       <div className='  font-raleway text-start mb-[50px]'>
-            <h2 className='text-[30px] md:w-[60%] ml-3 lg:text-[54px] font-bold'>“We are passionate about creating visually stunningare passionate about creating </h2>
-        </div>
-        <div className='px-[20px] h-[600px] scroll-y-none overflow-auto xl:w-[1400px] lg:w-[950px] md:w-[650px]'>
-          <div className='flex gap-[40px]' style={{ width : weight + 'px'}}>
-          {
-          slides.map(slide => (
-            <div key={slide} className='h-[400px] w-[400px] flex flex-col text-start'>
-              <img className='h-[400px] w-[400px] ' src="/img/slider-team-img.png" alt="" />
+    useEffect(() => {
+        const updateWeight = () => {
+            if (slides?.work_process) {
+                const windowWidth = window.innerWidth;
+                const newWeight = windowWidth > 768 ? slides.work_process.length * 400 : slides.work_process.length * 250;
+                setWeight(newWeight);
+            }
+        };
+
+        // Устанавливаем начальное значение
+        updateWeight();
+
+        // Обработчик для изменения размера окна
+        window.addEventListener('resize', updateWeight);
+
+        // Убираем обработчик при размонтировании компонента
+        return () => {
+            window.removeEventListener('resize', updateWeight);
+        };
+    }, [slides]);
+
+    if (!slides || !slides.work_process) {
+        return <Loading />;
+    }
+
+    return (
+        <section className='container py-[100px]'>
+            <div className='font-raleway text-start mb-[50px]'>
+                <h2 className='text-[30px] md:w-[60%] ml-3 lg:text-[54px] font-bold'>
+                    {slides.name}
+                </h2>
             </div>
-          ))
-        }
-
-          </div>
-        </div>
-     
-    </section>
-   
-  );
+            <div className='px-[20px] h-[600px] scroll-y-none overflow-auto xl:w-[1400px] lg:w-[950px] md:w-[650px]'>
+                <div className='flex gap-[40px]' style={{ width: weight + 'px' }}>
+                    {slides.work_process.map(slide => (
+                        <div key={slide.id} className='md:h-[400px] md:w-[400px] h-[250px] w-[250px] flex flex-col text-start'>
+                            <Image
+                                src={slide.image}
+                                alt="Slide"
+                                className='w-[400px] h-[400px] object-cover'
+                                width={400}
+                                height={400}
+                            />
+                        </div>
+                    ))}
+                </div>
+            </div>
+        </section>
+    );
 };

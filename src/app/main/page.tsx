@@ -1,5 +1,5 @@
 'use client';
-import { Header, Footer, MainPageFirstBlock, MainPageFiveBlock, MainPageFourBlock, MainPageSecondBlock, MainPageThirdBlock, MainPageSixBlock, MainPageSevenBlock, MainPageEightBlock, MainPageTenBlock } from "../components";
+import { Header, Footer, MainPageFirstBlock, Review, News, MainPageFiveBlock, MainPageFourBlock, MainPageSecondBlock, MainPageThirdBlock, MainPageSixBlock, MainPageSevenBlock, MainPageEightBlock, MainPageTenBlock } from "../components";
 import { useEffect, useState } from "react";
 import Loading from "../../../src/app/loading";
 import axiosInstance from '../utils/api';
@@ -39,9 +39,11 @@ export default function Main() {
                     <MainPageThirdBlock />
                     <MainPageFourBlock />
                 </div>
+                <Review />
                 <MainPageSixBlock />
                 <MainPageSevenBlock />
                 <MainPageEightBlock />
+                <News/>
                 <MainPageTenBlock />
                 <hr />
             </section>

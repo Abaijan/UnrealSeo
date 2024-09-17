@@ -83,7 +83,7 @@ export const ContactPageSecondBlock = () => {
                             <div>
                                 <button
                                     type="submit"
-                                    className="bg-[#85FF01] text-[black] font-bold py-3 px-6 rounded-md shadow-md transition-colors mt-[100px]"
+                                    className="lg:mt-0 bg-[#85FF01] text-[black] font-bold py-3 px-6 rounded-md shadow-md transition-colors mt-[100px]"
                                     onClick={() => console.log(email, name, message)}
                                 >
                                     ОТПРАВИТЬ

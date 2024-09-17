@@ -44,7 +44,7 @@ export const MainPageEightBlock = () => {
                         {data?.name}
                     </h2>
                     <span className="text-[12px] lg:text-[24px]">
-            {data?.description}
+                        {data?.description}
           </span>
                 </div>
                 <Link href="/contacts">
