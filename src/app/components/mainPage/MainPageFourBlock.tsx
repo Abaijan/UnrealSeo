@@ -1,6 +1,7 @@
 'use client';
 import React, { useEffect, useState } from 'react';
 import axiosInstance from '../../utils/api';
+import Image from "next/image";
 
 // Типизация данных
 interface QuoteData {
@@ -33,7 +34,7 @@ export const MainPageFourBlock = () => {
             </div>
 
             <div className="absolute z-20 top-[285px] md:top-[250px] left-[0] lg:top-[40.2%] w-[30vw] h-[50vw] lg:left-[0%]">
-                <img src={data?.image} alt="Quote" />
+                <Image width='380' height='380' src={data?.image} alt="Quote" />
             </div>
             <div className="absolute z-20 top-[356px] md:top-[380px] left-[30vw] lg:left-[35vw] lg:top-[65.7%]  w-[20vw] xl:top-[670px] h-[20vw] lg:left-[20%]">
                 <img src={data?.image} alt="Quote" />

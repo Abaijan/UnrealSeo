@@ -17,11 +17,6 @@ export const metadata: Metadata = {
         "анреал кг компания",
         "анреал кг ",
     ],
-    vewport: {
-        width: "device-width",
-        initialScale: 1,
-        maximumScale: 1,
-    }
     openGraph: {
         type: 'website',
         url: 'https://unreal.kg',

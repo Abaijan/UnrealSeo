@@ -59,7 +59,7 @@ export const MainPageFirstBlock = () => {
                 className='absolute md:top-[-3%] md:left-[85%] lg:top-[-7%] top-[-5%] left-[65%] lg:left-[90%] z-10'
                 style={parallaxStyles(0.2)}
             >
-                <Image width='500' height={10} width={10} height='500' className='w-[100%] h-[100%] rotate-180' src={data.image} alt="Unreal.kg" />
+                <Image height={10} width={10} className='w-[100%] h-[100%] rotate-180' src={data.image} alt="Unreal.kg" />
             </div>
 
             {/* Second Parallax Image */}
