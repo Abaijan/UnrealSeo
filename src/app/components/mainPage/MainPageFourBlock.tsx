@@ -34,13 +34,13 @@ export const MainPageFourBlock = () => {
             </div>
 
             <div className="absolute z-20 top-[285px] md:top-[250px] left-[0] lg:top-[40.2%] w-[30vw] h-[50vw] lg:left-[0%]">
-                {data?.image ? <Image  width='380' height='380' src={data?.image} alt="Quote" /> : null}
+                {data?.image ? <Image  width={580} height={580} src={data?.image} alt="Quote" /> : null}
             </div>
             <div className="absolute z-20 top-[356px] md:top-[380px] left-[30vw] lg:left-[35vw] lg:top-[65.7%]  w-[20vw] xl:top-[670px] h-[20vw] lg:left-[20%]">
-                {data?.image ? <Image  src={data?.image} alt="Quote" /> : null}
+                {data?.image ? <Image width='580' height='580'  src={data?.image} alt="Quote" /> : null}
             </div>
             <div className="absolute z-20 top-[360px] md:top-[425px] md:left-[73vw] rotate-45 md:left-[60vw] xl:top-[650px] lg:top-[50.7%] lg:left-[70vw] left-[70vw] lg:top-[67%] w-[20vw] h-[20vw] lg:left-[50%]">
-                {data?.image ? <Image  src={data?.image} alt="Quote" /> : null}
+                {data?.image ? <Image width='580' height='580' src={data?.image} alt="Quote" /> : null}
             </div>
         </section>
     );
