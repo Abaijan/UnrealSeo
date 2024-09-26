@@ -1,7 +1,7 @@
 'use client'
 import React, { useEffect, useState } from "react";
 import axiosInstance from '../../utils/api';
-
+import Image from 'next/image';
 export const AboutUsThreeBlock = () => {
   const [data, setData] = useState<any>(null); // тип данных можно уточнить, если известен
 
@@ -28,7 +28,9 @@ export const AboutUsThreeBlock = () => {
   return (
       <section className="container relative">
         <div className="flex flex-col xl:flex-row items-start">
-          <img
+          <Image
+              width={500}
+              height={500}
               className="absolute top-[130vw] left-[30vw] md:top-[30vw] md:w-[60vw] md:left-[30vw] w-[50vw] z-[0] xl:relative xl:rotate-0 xl:top-0 lg:top-[30vw] lg:left-[30vw] xl:left-0 xl:mt-[10vw]"
               src={data.image}
               alt="Statistics Image"

@@ -2,6 +2,7 @@
 
 import React, { useEffect, useState } from 'react';
 import axiosInstance from '../../utils/api';
+import Image from 'next/image';
 
 // Интерфейс для одного элемента блога
 interface BlogItem {
@@ -45,7 +46,7 @@ interface BlogPageFirstBlockProps {
                             <b>Блог : <span className="text-[#9500DC]">{item.created_at.split('T')[0]} </span></b>
                             <h3 className="text-[16px] font-bold ">{item.name}</h3>
                             <p className="text-[14px] ">{item.description}</p>
-                            <img src={item.image} alt="Blog Image" />
+                            <Image width={500} height={500} src={item.image} alt="Blog unreal web" />
                         </div>
                     ))
                 ) : (

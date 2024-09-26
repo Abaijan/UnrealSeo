@@ -3,6 +3,7 @@ import React from "react";
 import { useState, useEffect } from "react";
 import axiosInstance from "../../utils/api";
 import Loading from "../..//loading";
+import Image from 'next/image';
 
 export const AboutUsFourBlock = () => {
   const [data, setData] = useState<any>(null);
@@ -64,7 +65,9 @@ console.log(data)
             </div>
           </div>
           <div>
-            <img
+            <Image
+              width={700}
+              height={400}
               className="ml-[10px] lg:w-[530px] lg:h-[580px]"
               src={data.image}
               alt=""

@@ -70,13 +70,13 @@ export default function HeaderBurger( {isBlog}: {isBlog: boolean}) {
                             <div className="flex justify-between items-end">
                                 <div className="flex gap-5">
                                     <Link href="#" aria-label="Instagram" className="text-muted-foreground hover:text-foreground" prefetch={false}>
-                                        <img className="w-7" src="/img/Instagraminatagram.svg" alt="Instagram" />
+                                        <Image width={40} height={40} className="w-7" src="/img/Instagraminatagram.svg" alt="Instagram" />
                                     </Link>
                                     <Link href="#" aria-label="TikTok" className="text-muted-foreground hover:text-foreground" prefetch={false}>
-                                        <img className="w-7" src="/img/TikToktiitok.svg" alt="TikTok" />
+                                        <Image width={40} height={40} className="w-7" src="/img/TikToktiitok.svg" alt="TikTok" />
                                     </Link>
                                     <Link href="#" aria-label="WhatsApp" className="text-muted-foreground hover:text-foreground" prefetch={false}>
-                                        <img className="w-6" src="/img/Groupwhatsapp.svg" alt="WhatsApp" />
+                                        <Image width={40} height={40} className="w-6" src="/img/Groupwhatsapp.svg" alt="WhatsApp" />
                                     </Link>
                                 </div>
                             </div>

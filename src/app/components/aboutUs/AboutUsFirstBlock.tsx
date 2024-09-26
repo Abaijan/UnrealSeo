@@ -1,14 +1,16 @@
 import React from "react";
-
+import Image from "next/image";
 export const AboutUsFirstBlock = ( data : any) => {
   const item = data && data.data[0]
   return (
     <section className=" container">
-      <div className="flex flex-col xl:flex-row items-center  mt-[50px]">
-        <img
-          className="lg:w-[738px]  h-[350px] lg:h-[600px]"
+      <div className="flex xl:flex-row flex-col  items-center  mt-[50px]">
+        <Image
+          width={700}
+          height={700}
+          className="lg:w-[638px]  h-[350px] lg:h-[600px]"
           src={item && item.image}
-          alt=""
+          alt="unreal kg"
         />
         <div className="flex flex-col items-start justify-center text-start h-[100%] xl:mt-0 mt-[50px] xl:ml-[50px]">
           <h3 className="font-raleway text-[40px] xl:text-[54px] leading-[48px] xl:leading-[4rem] z-20 font-bold">
