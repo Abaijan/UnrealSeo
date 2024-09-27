@@ -64,7 +64,7 @@ export const MainPageFirstBlock = () => {
 
             {/* Second Parallax Image */}
             <div
-                className='absolute md:left-[-10%] md:top-[30%] left-[-90%] md:w-[80%] md:h-[80%] lg:left-auto lg:top-[20%] top-[10%] z-10'
+                className='absolute md:left-[-10%] md:top-[30%] left-[-90%] md:w-[80%] md:h-[80%] lg:left-auto lg:top-[20%] top-[10%] z-[-10]'
                 style={parallaxStyleLeft(0.13)}
             >
                 <Image width='1000' height='1000' src={data.image} alt="Unreal kg" />
@@ -73,7 +73,7 @@ export const MainPageFirstBlock = () => {
             {/* Third Parallax Image */}
             <div
                 className='absolute md:hidden overflow-hidden left-[-10%] w-[60%] h-[60%] origin-center rotate-90 top-[-7%] lg:left-auto lg:top-auto z-10'
-                style={parallaxStyleLeft(0.1)}
+                style={parallaxStyleLeft(0.3)}
             >
                 <Image width='500' height='500' src={data.image} alt="Unreal kg" />
             </div>
@@ -90,7 +90,7 @@ export const MainPageFirstBlock = () => {
                     <Link href="/contacts">
                         <button
                             type="button"
-                            className='pt-[18px] pb-[18px] pr-[28px] pl-[28px] bg-[#84FF00] font-bold lg:px-[40px] lg:font-bold font-raleway text-[12px] lg:text-[18px] w-[191px] h-[55px] lg:w-auto lg:h-auto rounded-[10px] text-[black] z-20'
+                            className='pt-[18px] pb-[18px] pr-[28px] pl-[28px] bg-[#84FF00] font-bold lg:px-[40px] lg:font-bold font-raleway text-[12px] lg:text-[18px] w-[191px] h-[55px] lg:w-auto lg:h-auto rounded-[10px] text-[black] z-3000'
                         >
                             ОСТАВИТЬ
                         </button>

@@ -26,12 +26,18 @@ export const metadata: Metadata = {
         images: [
             {
                 url: '/img/logo.jpg',
-                width: 1200,
+                width: 600,
                 height: 630,
                 alt: 'Unreal Kg Logo',
             },
         ],
     },
+    icons: {
+        icon: "/img/favicon.ico",
+        shortcut: "/img/favicon-32x32.png",
+        apple: "/img/apple-touch-icon.png",
+    },
+
     creator: "Nevo Devs",
     publisher: "Nevo Devs",
     applicationName: "Unreal Kg",
@@ -39,10 +45,6 @@ export const metadata: Metadata = {
     robots: {
         index: true,
         follow: true,
-    },
-    icons: {
-        icon: "/img/logo.jpg",
-        shortcut: "/img/logo.jpg",
     },
 };
 
