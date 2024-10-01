@@ -16,6 +16,8 @@ export const metadata: Metadata = {
         "unreal kg",
         "анреал кг компания",
         "анреал кг ",
+        "маркетирнговая компания",
+        "маркетинговая компания в Бишкеке",
     ],
     openGraph: {
         type: 'website',
@@ -54,7 +56,7 @@ export default function RootLayout({
     children: React.ReactNode;
 }>) {
     return (
-        <html lang="ru">
+        <html lang="en">
         <head>
             <meta name="google-site-verification" content="Gmk_Ix8uZgaUSJfvlF4QtbcWnafdPdpg1fT85UH0W6U"/>
             <link rel="preconnect" href="https://fonts.googleapis.com"/>
