@@ -28,7 +28,7 @@ export const OurTeam = () => {
     }
 
     return (
-        <section className="container">
+        <section className="container px-[40px]">
             <div className="font-raleway text-start md:mt-[0] mt-[-200px] mb-[50px]">
                 <h2 className="text-[30px] md:w-[60%] ml-3 lg:text-[54px] font-bold">Our Team:</h2>
             </div>

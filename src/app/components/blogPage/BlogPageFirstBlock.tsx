@@ -44,9 +44,9 @@ interface BlogPageFirstBlockProps {
                     data.map((item) => (
                         <div className="flex flex-col gap-5" key={item.id}>
                             <b>Блог : <span className="text-[#9500DC]">{item.created_at.split('T')[0]} </span></b>
-                            <h3 className="text-[16px] font-bold ">{item.name}</h3>
-                            <p className="text-[14px] ">{item.description}</p>
-                            <Image width={500} height={500} src={item.image} alt="Blog unreal web" />
+                            <h3 className="text-[16px] font-bold xl:text-[34px] ">{item.name}</h3>
+                            <p className="text-[14px] xl:text-[18px] ">{item.description}</p>
+                            <Image width={500} className="xl:w-full" height={500} src={item.image} alt={item.name} />
                         </div>
                     ))
                 ) : (

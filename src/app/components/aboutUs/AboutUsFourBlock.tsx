@@ -30,7 +30,7 @@ console.log(data)
     <section className=" container px-[40px]  py-[100px] ">
       <div className="flex flex-col mt-[100px]">
         <div className="flex lg:flex-row  flex-col gap-[30px] justify-between">
-          <h2 className="font-raleway  text-[20px] lg:text-[54px] leading-[35px] md:leading:[5rem] lg:leading-[4rem] z-20  font-bold">
+          <h2 className="font-raleway  text-[20px] lg:text-[54px] lg:w-[800px] leading-[35px] md:leading:[5rem] lg:leading-[4rem] z-20  font-bold">
             {data.name}
           </h2>
         </div>

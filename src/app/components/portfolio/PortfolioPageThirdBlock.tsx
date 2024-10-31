@@ -60,9 +60,9 @@ export const PortfolioPageThirdBlock = () => {
     }
 
     return (
-        <section className='container py-[100px]'>
+        <section className='container xl:px-[50px] py-[100px]'>
             <div className='font-raleway text-start mb-[50px]'>
-                <h2 className='text-[30px] md:w-[60%] ml-3 lg:text-[54px] font-bold'>
+                <h2 className='text-[30px]  md:w-[60%] ml-3 lg:text-[54px] font-bold'>
                     {slides.name}
                 </h2>
             </div>

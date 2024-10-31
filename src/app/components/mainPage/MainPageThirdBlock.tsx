@@ -1,6 +1,7 @@
 'use client'
 import React, { useEffect, useState } from "react";
 import axiosInstance from '../../utils/api';
+import Image from "next/image";
 
 // Define a type for the item
 interface Item {
@@ -38,10 +39,12 @@ export const MainPageThirdBlock = () => {
                     data.map((item) => (
                         <div
                             key={item.id}
-                            className="flex flex-col content-left gap-[30px] items-start lg:flex-row lg:items-center justify-between border-b pb-4"
+                            className="flex flex-col content-left gap-[30px] items-start xl:px-5 lg:flex-row lg:items-center justify-between border-b pb-4"
                         >
                             <span className="text-[24px] md:text-[34px] font-semibold">{item.name}</span>
-                            <img
+                            <Image
+                                width={630}
+                                height={180}
                                 src={item.image}
                                 alt={item.name}
                                 className="w-[630px] lg:h-[180px] rounded-[10px] object-cover"

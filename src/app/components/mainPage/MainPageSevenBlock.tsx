@@ -23,7 +23,7 @@ export const MainPageSevenBlock = () => {
     }, []);
 
     return (
-        <section className="container h-auto mt-[100px] mb-[100px]">
+        <section className="container xl:px-[50px] h-auto mt-[100px] mb-[100px]">
             <div className="grid grid-cols-1 lg:grid-cols-2 font-raleway text-start mb-[50px]">
                 <h2 className="text-[32px] lg:text-[54px] font-bold">Our partners</h2>
             </div>

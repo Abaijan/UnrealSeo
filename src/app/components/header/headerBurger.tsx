@@ -20,8 +20,8 @@ export default function HeaderBurger( {isBlog}: {isBlog: boolean}) {
 
     return (
         <>
-            <div className="md:w-auto  w-full h-[120px] flex justify-between overflow-y-hidden items-center px-4">
-                <span className="block z-[200] md:hidden  lg:hidden">
+            <div className="md:w-auto xl:hidden w-full h-[120px] flex justify-between overflow-y-hidden items-center px-4">
+                <span className="block  z-[200] md:hidden  lg:hidden">
                     <Image src="/img/logo.jpg" alt="logo" width={150} height={150} className="z-[201] w-[100px] h-[100px] cursor-pointer" />
                 </span>
                 <button className="flex z-[200] lg:hidden cursor-pointer" onClick={handleClick}>

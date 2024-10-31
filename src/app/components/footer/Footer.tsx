@@ -77,10 +77,10 @@ export const Footer = () => {
             <div className="block lg:hidden"></div>
             <div className="grid  gap-2">
               <nav className="flex flex-col gap-[20px] mb-4">
-                <Link href="/contacts" className="text-[14px] md:text-[20px] hover:underline" prefetch={false}>
+                <Link href="/contacts" className="text-[10px] md:text-[20px] hover:underline" prefetch={false}>
                   +996 555 55 55 55
                 </Link>
-                <Link href="/contacts" className="text-[14px] md:text-[20px] hover:underline" prefetch={false}>
+                <Link href="/contacts" className="text-[10px] md:text-[20px] hover:underline" prefetch={false}>
                   info@example.com
                 </Link>
               </nav>

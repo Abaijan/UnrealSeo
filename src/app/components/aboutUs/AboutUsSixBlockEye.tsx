@@ -26,9 +26,9 @@ export const AboutUsSixBlockEye = () => {
     console.log(data)
 
     return (
-        <section className="container lg:pb-[200px]">
+        <section className="container xl:p-0 lg:pb-[200px]">
             <section className="flex relative flex-col gap-[40px] lg:flex-row min-h-screen">
-                <div className="relative flex items-center justify-center w-full lg:w-[847px] h-[40vh] lg:h-[847px] bg-black text-white">
+                <div className="relative flex items-center justify-center w-full xl:w-[70%] lg:w-[847px] h-[40vh] lg:h-[847px] bg-black text-white">
                     <Image
                         src={data.image2}
                         alt="Eye and Moon"

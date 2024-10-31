@@ -3,7 +3,7 @@ import Image from "next/image";
 export const AboutUsFirstBlock = ( data : any) => {
   const item = data && data.data[0]
   return (
-    <section className=" container">
+    <section className="container xl:p-[60px]">
       <div className="flex xl:flex-row flex-col  items-center  mt-[50px]">
         <Image
           width={700}

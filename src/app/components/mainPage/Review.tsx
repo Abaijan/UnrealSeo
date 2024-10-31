@@ -33,9 +33,9 @@ export const Review = () => {
     if (!data) return <Loading />;
 
     return (
-        <section className="container py-[100px] xl:mt-[200px]  px-[20px] md:px-[40px]">
+        <section className="container py-[50px] xl:mt-[100px]  px-[20px] md:px-[40px]">
             <div className="flex flex-col gap-[40px]">
-                <h1 className="text-[32px] md:text-[48px] lg:text-[64px] font-bold text-center">Отзывы наших клиентов</h1>
+                <h1 className="text-[32px] md:text-[48px] lg:max-w-[500px] lg:text-[64px] font-bold text-left leading-[60px]">Отзывы наших клиентов</h1>
                 <div className="flex h-auto overflow-x-scroll gap-[30px] scrollbar-hide">
                     <div className="flex lg:flex-row flex-col gap-[30px]">
                         {

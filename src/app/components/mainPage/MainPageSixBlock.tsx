@@ -20,9 +20,9 @@ export const MainPageSixBlock = () => {
   }, []);
 
   return (
-      <section className="container">
-        <div className="pt-[140px]">
-          <h2 className="font-raleway font-extrabold lg:text-[110px] text-[60px] mb-[60px] lg:leading-[6rem]">
+      <section className="container xl:p-[50px]">
+        <div className="pt-[40px]">
+          <h2 className="font-raleway xl:translate-y-[250px] font-extrabold lg:text-[110px] text-[60px] mb-[60px] lg:leading-[6rem]">
             Наши <br />
             проекты
           </h2>

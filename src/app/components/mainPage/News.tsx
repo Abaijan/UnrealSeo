@@ -33,9 +33,9 @@ export  const  News = () => {
     }
 
     return (
-        <section className="font-raleway container">
+        <section className="font-raleway xl:px-[50px] container">
             <div className='  font-raleway text-start mb-[40px] mt-[100px]  '>
-                <h2 className='text-[30px] md:w-[60%] ml-3 lg:text-[54px] font-bold'>Новости  </h2>
+                <h2 className='text-[30px] md:w-[60%] ml-3 lg:text-[54px] font-bold'>Будьте в курсе последних новостей и трендов  </h2>
             </div>
 
             <div
